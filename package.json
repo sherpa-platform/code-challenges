@@ -1,0 +1,16 @@
+{
+  "name": "code-challenges",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "generate-pdfs": "md-to-pdf phone_catalog_live/README.md phone_catalog_homework/README.md"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "md-to-pdf": "^5.2.4"
+  }
+}
