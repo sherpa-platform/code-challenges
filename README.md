@@ -1,6 +1,6 @@
-# Phone Catalog Project
+# Code Challenges
 
-This repository contains two related projects: a live phone catalog application and a homework assignment for creating a phone catalog.
+This repository contains different code challenges to assess Sherpa's candidates coding skills.
 
 ## Project Structure
 
