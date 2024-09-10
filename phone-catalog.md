@@ -1,89 +1,103 @@
 # PHONE CATALOG
 
-## The challenge
+## The Challenge
 
-The challenge is to create a **NextJS App** phone catalog app from scratch.
+The challenge is to create a **NextJS-based phone catalog app** from scratch. You'll be working with a modern tech stack similar to the one Sherpa uses, and the goal is to simulate the development process you’d face in our team.
 
 ### Minimum Requirements
 
 In broad terms, the outcome should meet at least the following criteria:
 
-1. **Web App for browsing the phones catalog**
+### 1. **Web App for Browsing the Phone Catalog**
 
-   - The design should be sophisticated and responsive to provide a good user experience on every device.
-   - The **Home page** should display a list of phones with images.
-   - It should be possible to select a given phone and view additional details about that phone.
-   - The phone information should be retrieved from the REST API described below.
-   - A **spinner** or placeholder component should be displayed while the REST API request is ongoing and the app is waiting for data.
+- Built using **NextJS** and **TailwindCSS** for the frontend.
+- The design should be clean, responsive, and user-friendly, ensuring a seamless experience across all devices (desktop and mobile).
+- The **Home page** should display a list of phones with images.
+- Implement **server-side rendering (SSR)** for faster load times and better SEO.
+- It should be possible to select a phone to view its details, which should include more information like manufacturer, price, and specifications.
+- A **spinner or skeleton loader** should be shown while the REST API request is ongoing.
 
-2. **REST API providing phones' information**
+### 2. **REST API Providing Phone Information**
 
-   - It should have at least one endpoint:
+- Build the REST API using **Node.js** (preferably with **Prisma** for database management).
+- The REST API should have at least one endpoint:
 
-     **Endpoint:**
+  - **Method:** GET
+  - **Path:** `/phones`
+  - **Response:** A JSON array containing phone details.
 
-     - **Method:** GET
-     - **Path:** `/phones`
+  Example response:
 
-     **Response body example:**
+  ```json
+  [
+    {
+      "id": 0,
+      "name": "iPhone 7",
+      "manufacturer": "Apple",
+      "description": "lorem ipsum dolor sit amet consectetur.",
+      "color": "black",
+      "price": 769,
+      "imageFileName": "IPhone_7.png",
+      "screen": "4.7 inch IPS",
+      "processor": "A10 Fusion",
+      "ram": 2
+    }
+  ]
+  ```
 
-     ```json
-     [
-       {
-         "id": 0,
-         "name": "iPhone 7",
-         "manufacturer": "Apple",
-         "description": "lorem ipsum dolor sit amet consectetur.",
-         "color": "black",
-         "price": 769,
-         "imageFileName": "IPhone_7.png",
-         "screen": "4,7 inch IPS",
-         "processor": "A10 Fusion",
-         "ram": 2
-       },
-       ...
-     ]
-     ```
+- Use a **PostgreSQL** database with Prisma for managing the data (you can use **Supabase** if hosting the database).
 
-3. **GitHub public repository**
-   - The repository should store the code for the app.
-   - It should include a `README.md` file describing the product and explaining how to run the app.
+### 3. **GitHub Public Repository**
+
+- The repository should store all code, with a clear directory structure.
+- Include a `README.md` with:
+  - A project description.
+  - Instructions on how to run the project locally.
+  - A list of technologies used (e.g., Next.js, Tailwind, Prisma, etc.).
+  - Deployment instructions for both the API and the frontend.
+
+### 4. **Basic DevOps and Deployment**
+
+- Include a **CI/CD pipeline** (for example, using **GitHub Actions**).
+- Optionally, Dockerize both the frontend and backend apps.
 
 ### Nice to Have
 
-The above bullets are the basic requirements, but **Sherpa** encourages you to extend the functionality and complexity as much as you see fit. Here are some additional ideas:
+While the points above cover the basics, Sherpa encourages going beyond the core requirements to show your creativity and technical skills. Here are some suggestions:
 
-- **Authentication and Authorization:**
+### 1. **Authentication and Authorization**
 
-  - You can implement authentication and authorization mechanisms using the approach and libraries you prefer.
+- Implement a simple authentication system (e.g., **NextAuth.js**, **JWT**, etc.) to protect certain features.
+- Only authenticated users can create, edit, or delete phones (basic CRUD operations).
 
-- **Libraries and third-party tools:**
+### 2. **Additional Libraries and Tools**
 
-  - You can use as many libraries as you want, in order to not reinvent the wheel or even to implement features faster or better (e.g. AI).
+- Feel free to integrate any useful libraries.
 
-- **CRUD capabilities:**
+### 3. **Full CRUD Functionality**
 
-  - You can implement full CRUD-compliant and documented endpoints on the REST API and use them in the React app to implement features like:
-    - Phone edition
-    - Phone deletion
-    - Phone creation
+- Extend the REST API to support **CRUD** operations:
+  - **POST** for adding new phones.
+  - **PUT** for updating existing phones.
+  - **DELETE** for removing phones.
+- The React app should include forms for creating and editing phones, with validation.
 
-- **Testing:**
+### 4. **Testing**
 
-  - You can implement:
-    - Unit / Integration / End-to-End / all of them.
+- Unit tests for React components.
+- Integration tests for the REST API.
+- End-to-end tests for the entire application.
 
-- **Persistence layer:**
+### 5. **Persistence Layer**
 
-  - Options for data persistence include:
-    - Simple `.json` / `.txt` / ... file.
-    - Relational / Non-Relational DB.
-    - Any other interesting approach.
+- Store phone data using **Supabase** as a backend-as-a-service (with PostgreSQL) or a similar service.
 
-- **Shipping:**
+### 6. **Monitoring and Alerts**
 
-  - You can dockerize both the React app and REST API, and even orchestrate them with Docker-Compose.
-  - You can deploy them somewhere (Vercel / Heroku / Kubernetes cluster / any other hosting platform).
+- Implement basic monitoring (e.g. **Betterstack**, **Sentry**, etc.) for error tracking.
+- Set up basic alerting in case of downtime or errors.
 
-- **Monitoring and alerts:**
-  - You can implement monitoring and alerting mechanisms to keep track of the app's performance and availability using any tools you prefer.
+### 7. **Deployment and Continuous Integration**
+
+- Implement a **CI/CD pipeline** using **GitHub Actions** or any other CI service.
+- Set up automatic deployment on a service like **Vercel** or **Heroku** (or any other platform that supports NextJS).
