@@ -1,4 +1,4 @@
-# SherpaCode Challenges
+# Sherpa Code Challenges
 
 This repository contains different code challenges to assess Sherpa's candidates coding skills.
 
